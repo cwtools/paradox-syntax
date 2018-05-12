@@ -1,10 +1,11 @@
 {
     "name": "paradox-syntax",
-    "displayName": "paradox-syntax",
+    "displayName": "Paradox Syntax Highlighting",
     "description": "",
     "version": "0.0.1",
     "publisher": "tboby",
     "repository": "https://github.com/tboby/paradox-syntax",
+    "preview": true,
     "engines": {
         "vscode": "^1.23.0"
     },
