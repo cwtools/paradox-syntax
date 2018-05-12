@@ -10,5 +10,5 @@ env:
 build:
   ci:
     - npm install -g vsce
-    - echo "[{\"name\":\"tboby\",\"pat\":\"$VSCE_TOKEN\"}]" > ~/.vsce
-    - if [ "$IS_RELEASE" == true ]; then vsce publish minor; fi
+    #- echo "[{\"name\":\"tboby\",\"pat\":\"$VSCE_TOKEN\"}]" > ~/.vsce
+    - if [ "$IS_RELEASE" == true ]; then vsce publish -p $VSCE_TOKEN minor; fi
