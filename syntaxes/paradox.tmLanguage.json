@@ -69,7 +69,7 @@
                     "match": "\\b(NOT_USED_2)\\b"
                 },
                 {
-                    "name": "keyword.control.multi_scopes.paradox",
+                    "name": "variable.language.multi_scopes.paradox",
                     "match": "\\b(ROOT|root|FROM|from|FROMFROM|fromfrom|FROMFROMFROM|fromfromfrom|FROMFROMFROMFROM|fromfromfromfrom|PREV|prev|PREVPREV|prevprev|PREVPREVPREV|prevprevprev|PREVPREVPREVPREV|prevprevprevprev|THIS|this)\\b"
                 },
                 {
@@ -77,7 +77,7 @@
                     "match": "\\b(variable|hidden_effect|default|random|debug_scope_type|save_event_target_as|custom_tooltip|custom_tooltip_fail|parameter|hidden|hidden_trigger)\\b"
                 },
                 {
-                    "name": "keyword.control.conditional.paradox",
+                    "name": "variable.language.conditions.paradox",
                     "match": "\\b(custom_tooltip|IF|if|hidden_trigger|exists|nor|nand|limit|yes|no|not|and|or|if|else|NOR|always|exists)\\b"
                 },
                 {
@@ -89,11 +89,11 @@
                     "match": "@\\w+"
                 },
                 {
-                    "name": "variable.other.boolean.paradox",
+                    "name": "variable.boolean.paradox",
                     "match": "\\b(or|and|not|nor|nand|OR|AND|NOT|NOR|NAND)\\b"
                 },
                 {
-                    "name": "variable.other.event.target.paradox",
+                    "name": "variable.event.target.paradox",
                     "match": "(event_target)(\\:)([\\w]*)",
                     "captures": {
                         "1": {
@@ -108,15 +108,15 @@
                     }
                 },
                 {
-                    "name": "variable.other.lhs.bracket.paradox",
+                    "name": "variable.lhs.bracket.paradox",
                     "match": "(\\w|\\.|-|:)+(?=\\s?(=|>|<|<=|>=)\\s?{)"
                 },
                 {
-                    "name": "variable.other.lhs.paradox",
+                    "name": "variable.lhs.paradox",
                     "match": "(\\w|\\.|-|:)+(?=\\s?(=|>|<|<=|>=))"
                 },
                 {
-                    "name": "variable.other.bracket.keywords",
+                    "name": "variable.bracket.keywords",
                     "match": "\\{\\s+[\\w+\\s+]+\\}"
                 },
                 {
@@ -136,15 +136,12 @@
                     "match": "-?\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b"
                 },
                 {
-                    "name": "constant.numeric.rhs.paradox",
+                    "name": "constant.rhs.paradox",
                     "match": "(\\d|\\.)+"
                 },
                 {
-                    "name": "constant.language.rhs.paradox",
+                    "name": "constant.rhs.string.paradox",
                     "match": "(\\w|\\.)+"
-                },
-                {
-                    "include": "#strings"
                 }
             ]
         },
@@ -216,9 +213,10 @@
         "variables": {
             "patterns": [
                 {
+                    "comment": "LHS for value (not block)",
                     "begin": "[^\\S\\n]*(?<!@)(?=\\b\\w+\\b[^\\S\\n]*=[^\\S\\n]*[^{\\s])",
                     "end": "[^\\S\\n]*=",
-                    "contentName": "variable.language.paradox",
+                    "contentName": "variable.paradox",
                     "patterns": [
                         {
                             "include": "#keywords"
@@ -226,6 +224,7 @@
                     ]
                 },
                 {
+                    "comment": "RHS for value",
                     "begin": "[^\\S\\n]*(?<=[=])[^\\S\\n]*",
                     "end": "[\\s]+",
                     "contentName": "variable.language.rhs.paradox",
@@ -238,7 +237,7 @@
                 {
                     "begin": "[^\\S\\n]*(?<!@)(?=\\b\\w+\\b[^\\S\\n]*=[^\\S\\n]*[{])",
                     "end": "[^\\S\\n]*=",
-                    "contentName": "variable.other.scope.paradox",
+                    "contentName": "variable.scope.paradox",
                     "patterns": [
                         {
                             "include": "#keywords"

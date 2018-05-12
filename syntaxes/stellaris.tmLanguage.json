@@ -1,5 +1,5 @@
 {
-	"injectionSelector": "L:source.mod",
+	"injectionSelector": "L:variable.paradox, L:variable.scope.paradox",
 	"scopeName": "source.stellaris",
 	"name": "Stellaris",
 	"patterns": [
@@ -8,7 +8,7 @@
 			"match": "\\b(pop|space_owner|pop_faction|closest_system|orbital_deposit_tile|owner|orbit|planet|country|starbase|observation_outpost|observation_outpost_owner|fleet)\\b"
 		},
 		{
-			"name": "keyword.event.paradox",
+			"name": "variable.language.multi_scopes.paradox",
 			"match": "^(event|country_event|planet_event|fleet_event|ship_event|pop_faction_event|pop_event)\\b"
 		},
         {
