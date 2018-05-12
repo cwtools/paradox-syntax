@@ -1,0 +1,9 @@
+language: node_js
+
+- secure: 2IpXD1koClPL2LqZyP14vgdV14o7aPycAVSFAaMnkW6KXRvdlnMTScWplz0kpKSvjojPSCEJzJUlhc0kCJLfcxIcFokIs1lkYKjpvjGnwnTRwpI/Glbd4vPsYQbzQS2mtVHudgcXLrhl+qrztjgI62tqg/BKPsdqoy3Vbvx0XmiaMY2fndwomf5S0ltd87BGfoaj3gjfoYOuiPcLMSMGORXYp6l0zE4ixEpwEuoeWqljKxipDPtqeIo02SkNQWC381saEQOyo9vtDNc5YyIbBjmduo9L8C9A0xdLhwq/swEfv1WyJN9ZdDjRdrZVwsvTdnWCFzKmFdtyAfGdtwWyfA==
+
+build:
+  ci:
+    - npm install -g vsce
+    - echo "[{\"name\":\"tboby\",\"pat\":\"$VSCE_TOKEN\"}]" > ~/.vsce
+    - if [ "$IS_RELEASE" == true ]; then vsce publish; fi
