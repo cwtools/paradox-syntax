@@ -235,7 +235,7 @@
                     ]
                 },
                 {
-                    "begin": "[^\\S\\n]*(?<!@)(?=\\b\\w+\\b[^\\S\\n]*=[^\\S\\n]*[{])",
+                    "begin": "[^\\S\\n]*(?<!@)(?=\\b[\\w:.]+\\b[^\\S\\n]*=[^\\S\\n]*[{])",
                     "end": "[^\\S\\n]*=",
                     "contentName": "variable.scope.paradox",
                     "patterns": [
