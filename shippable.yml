@@ -10,4 +10,4 @@ env:
 build:
   ci:
     - npm install -g vsce
-    - if [ "$IS_RELEASE" == true ]; then vsce publish -p $VSCE_TOKEN patch; fi
+    - if [ "$IS_RELEASE" == true ]; then vsce publish -p $VSCE_TOKEN $GIT_TAG_NAME; fi
