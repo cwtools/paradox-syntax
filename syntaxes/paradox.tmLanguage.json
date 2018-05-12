@@ -69,7 +69,7 @@
                     "match": "\\b(NOT_USED_2)\\b"
                 },
                 {
-                    "name": "variable.language.multi_scopes.paradox",
+                    "name": "keyword.control.multi_scopes.paradox",
                     "match": "\\b(ROOT|root|FROM|from|FROMFROM|fromfrom|FROMFROMFROM|fromfromfrom|FROMFROMFROMFROM|fromfromfromfrom|PREV|prev|PREVPREV|prevprev|PREVPREVPREV|prevprevprev|PREVPREVPREVPREV|prevprevprevprev|THIS|this)\\b"
                 },
                 {
@@ -77,7 +77,7 @@
                     "match": "\\b(variable|hidden_effect|default|random|debug_scope_type|save_event_target_as|custom_tooltip|custom_tooltip_fail|parameter|hidden|hidden_trigger)\\b"
                 },
                 {
-                    "name": "variable.language.conditions.paradox",
+                    "name": "keyword.control.conditional.paradox",
                     "match": "\\b(custom_tooltip|IF|if|hidden_trigger|exists|nor|nand|limit|yes|no|not|and|or|if|else|NOR|always|exists)\\b"
                 },
                 {
@@ -89,11 +89,11 @@
                     "match": "@\\w+"
                 },
                 {
-                    "name": "variable.boolean.paradox",
+                    "name": "variable.other.boolean.paradox",
                     "match": "\\b(or|and|not|nor|nand|OR|AND|NOT|NOR|NAND)\\b"
                 },
                 {
-                    "name": "variable.event.target.paradox",
+                    "name": "variable.other.event.target.paradox",
                     "match": "(event_target)(\\:)([\\w]*)",
                     "captures": {
                         "1": {
@@ -108,15 +108,15 @@
                     }
                 },
                 {
-                    "name": "variable.lhs.bracket.paradox",
+                    "name": "variable.other.lhs.bracket.paradox",
                     "match": "(\\w|\\.|-|:)+(?=\\s?(=|>|<|<=|>=)\\s?{)"
                 },
                 {
-                    "name": "variable.lhs.paradox",
+                    "name": "variable.other.lhs.paradox",
                     "match": "(\\w|\\.|-|:)+(?=\\s?(=|>|<|<=|>=))"
                 },
                 {
-                    "name": "variable.bracket.keywords",
+                    "name": "variable.other.bracket.keywords",
                     "match": "\\{\\s+[\\w+\\s+]+\\}"
                 },
                 {
@@ -129,23 +129,19 @@
             "patterns": [
                 {
                     "name": "constant.language.paradox",
-                    "match": "(?<=(=|>|<))(\\s*)((yes|no)+(\\s|=))"
+                    "match": "(yes|no)+"
                 },
                 {
                     "name": "constant.numeric.paradox",
-                    "match": "(?<=(\\s|=|>|<))-?\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b"
+                    "match": "-?\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b"
                 },
                 {
-                    "name": "constant.rhs.number.paradox",
-                    "match": "(?<=(=|>|<))(\\s*)((\\d|\\.)+(\\s|=))"
+                    "name": "constant.numeric.rhs.paradox",
+                    "match": "(\\d|\\.)+"
                 },
                 {
-                    "name": "constant.rhs.paradox",
-                    "match": "(?<=(=|>|<))(\\s*)((\\w|\\.)+(\\s|=))"
-                },
-                {
-                    "name": "constant.rhs.string.paradox",
-                    "match": "(\\\")[\\w\\s:.\\[\\]]*(\\\")"
+                    "name": "constant.language.rhs.paradox",
+                    "match": "(\\w|\\.)+"
                 },
                 {
                     "include": "#strings"
@@ -202,14 +198,19 @@
                     "include": "#id"
                 },
                 {
-                    "include": "#keywords"
-                },
-                {
-                    "include": "#constants"
-                },
-                {
                     "include": "#variables"
                 }
+            ]
+        },
+        "rhs" : {
+            "patterns": [
+
+                        {
+                            "include": "#constants"
+                        },
+                        {
+                            "include": "#strings"
+                        }
             ]
         },
         "variables": {
@@ -217,7 +218,7 @@
                 {
                     "begin": "[^\\S\\n]*(?<!@)(?=\\b\\w+\\b[^\\S\\n]*=[^\\S\\n]*[^{\\s])",
                     "end": "[^\\S\\n]*=",
-                    "contentName": "variable.paradox",
+                    "contentName": "variable.language.paradox",
                     "patterns": [
                         {
                             "include": "#keywords"
@@ -225,9 +226,19 @@
                     ]
                 },
                 {
+                    "begin": "[^\\S\\n]*(?<=[=])[^\\S\\n]*",
+                    "end": "[\\s]+",
+                    "contentName": "variable.language.rhs.paradox",
+                    "patterns": [
+                        {
+                            "include": "#rhs"
+                        }
+                    ]
+                },
+                {
                     "begin": "[^\\S\\n]*(?<!@)(?=\\b\\w+\\b[^\\S\\n]*=[^\\S\\n]*[{])",
                     "end": "[^\\S\\n]*=",
-                    "contentName": "variable.scope.paradox",
+                    "contentName": "variable.other.scope.paradox",
                     "patterns": [
                         {
                             "include": "#keywords"
@@ -267,8 +278,8 @@
             },
             "patterns": [
                 {
-                    "name": "constant.other.paradox",
-                    "match": "§[A-Za-z!]"
+                    "name": "constant.character.escape.paradox",
+                    "match": "\\\\."
                 }
             ]
         }
