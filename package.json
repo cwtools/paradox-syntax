@@ -1,4 +1,7 @@
 {
+    "contributors": [
+        "Gratak", "Dayshine"
+    ],
     "name": "paradox-syntax",
     "displayName": "Paradox Syntax Highlighting",
     "description": "",
@@ -25,6 +28,13 @@
                     "source.mod"
                 ],
                 "path": "./syntaxes/stellaris.tmLanguage.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "Stellaris Theme",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Paradox-Dimmed.tmLanguage.json"
             }
         ]
     }

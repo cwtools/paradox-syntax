@@ -1,0 +1,125 @@
+{
+  "author": "Gratak",
+  "comment": "Stellaris - Dimmed by Adam Przybylski for Stellaris's games syntax.",
+  "name": "Stellaris-Dimmed",
+  "tokenColors": [
+    {
+      "settings": {
+        "background": "#000000",
+        "caret": "#A7A7A7",
+        "foreground": "#F8F8F8",
+        "invisibles": "#CAE2FB3D",
+        "lineHighlight": "#FFFFFF0D",
+        "selection": "#DDF0FF33"
+      }
+    },
+    {
+      "scope": "variable.language.multi_scopes.paradox",
+      "settings": {
+        "foreground": "#DA70D6"
+      }
+    },
+    {
+      "scope": "constant.prefdef.paradox",
+      "settings": {
+        "foreground": "#bbeeff"
+      }
+    },
+    {
+      "scope": "variable.language.condition_scopes.paradox",
+      "settings": {
+        "foreground": "#9CCB19"
+      }
+    },
+    {
+      "scope": "variable.language.command_scopes.paradox",
+      "settings": {
+        "foreground": "#8A2BE2"
+      }
+    },
+    {
+      "scope": "variable.language.other.paradox",
+      "settings": {
+        "foreground": "#00BFFF"
+      }
+    },
+    {
+      "scope": "variable.language.conditions.paradox",
+      "settings": {
+        "foreground": "#9CCB19"
+      }
+    },
+    {
+      "scope": "variable.language.effects.paradox",
+      "settings": {
+        "foreground": "#ff8300"
+      }
+    },
+    {
+      "scope": "constant.numeric.paradox",
+      "settings": {
+        "foreground": "#1f8206"
+      }
+    },
+    {
+      "scope": "variable.boolean.paradox",
+      "settings": {
+        "foreground": "#EE4000"
+      }
+    },
+    {
+      "scope": [
+        "variable.lhs.paradox",
+        "rest.normal.paradox"
+      ],
+      "settings": {
+        "foreground": "#aaffaa"
+      }
+    },
+    {
+      "scope": "variable.lhs.bracket.paradox",
+      "settings": {
+        "foreground": "#0060EE"
+      }
+    },
+    {
+      "scope": [
+        "constant.rhs.paradox",
+        "constant.language.paradox"
+      ],
+      "settings": {
+        "foreground": "#00b200"
+      }
+    },
+    {
+      "scope": "variable.language.definition_tokens.paradox",
+      "settings": {
+        "foreground": "#569CD6"
+      }
+    },
+    {
+      "scope": "variable.language.modifiers.paradox",
+      "settings": {
+        "foreground": "#008000"
+      }
+    },
+    {
+      "scope": "source.mod",
+      "settings": {
+        "foreground": "#ffffff"
+      }
+    },
+    {
+      "scope": "string.quoted.double.paradox",
+      "settings": {
+        "foreground": "#D51232"
+      }
+    },
+    {
+      "scope": "comment.line.number-sign.paradox",
+      "settings": {
+        "foreground": "#a5abaf"
+      }
+    }
+  ]
+}
