@@ -215,8 +215,8 @@
             "patterns": [
                 {
                     "comment": "LHS for value, but not block (>keyword =< something)",
-                    "begin": "[^\\S\\n]*(?<!@)(?=\\b\\w+\\b[^\\S\\n]*=[^\\S\\n]*[^{\\s])",
-                    "end": "[^\\S\\n]*=",
+                    "begin": "[^\\S\\n]*(?<!@)(?=\\b\\w+\\b[^\\S\\n]*(=|<|>|<=|>=)[^\\S\\n]*[^{\\s])",
+                    "end": "[^\\S\\n]*(=|<|>|<=|>=)",
                     "contentName": "variable.paradox",
                     "patterns": [
                         {
@@ -227,7 +227,7 @@
                 },
                 {
                     "comment": "RHS for value (keyword = >something<)",
-                    "begin": "[^\\S\\n]*(?<=[=])[^\\S\\n]*",
+                    "begin": "[^\\S\\n]*(?<==|<|>|<=|>=)[^\\S\\n]*",
                     "end": "[\\s]+",
                     "contentName": "variable.language.rhs.paradox",
                     "patterns": [
