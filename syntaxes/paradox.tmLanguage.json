@@ -10,6 +10,7 @@
             "include": "#namespace"
         },
         {
+            "comment": "This is the main entry-point",
             "include": "#code"
         }
     ],
@@ -30,6 +31,49 @@
                             "name": "entity.name.type.namespace.txt"
                         }
                     }
+                }
+            ]
+        },
+        "comment": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.paradox",
+                    "comment": "A line starting with # is a comment",
+                    "begin": "#",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.comment.paradox"
+                        }
+                    },
+                    "end": "$\\n?"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.prefdef.paradox",
+                    "comment": "A RHS script variable (... = @variable)",
+                    "match": "(@\\w+)"
+                },
+                {
+                    "name": "constant.language.paradox",
+                    "match": "(yes|no)+"
+                },
+                {
+                    "name": "constant.numeric.paradox",
+                    "comment": "A RHS number, either integer or float, positive or negative",
+                    "match": "-?\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b"
+                },
+                {
+                    "name": "constant.rhs.paradox",
+                    "comment": "A more generic RHS number, any combination of digits and dots",
+                    "match": "(\\d|\\.)+"
+                },
+                {
+                    "name": "constant.rhs.string.paradox",
+                    "comment": "Any other RHS value, any combination of word characters and dots",
+                    "match": "(\\w|\\.)+"
                 }
             ]
         },
@@ -70,6 +114,7 @@
                 },
                 {
                     "name": "variable.language.multi_scopes.paradox",
+                    "comment": "LHS one to one scope changes",
                     "match": "\\b(ROOT|root|FROM|from|FROMFROM|fromfrom|FROMFROMFROM|fromfromfrom|FROMFROMFROMFROM|fromfromfromfrom|PREV|prev|PREVPREV|prevprev|PREVPREVPREV|prevprevprev|PREVPREVPREVPREV|prevprevprevprev|THIS|this)\\b"
                 },
                 {
@@ -82,18 +127,22 @@
                 },
                 {
                     "name": "variable.language.definition_tokens.paradox",
+                    "comment": "Generic LHS keywords",
                     "match": "\\b(name|option|id|title|desc|picture|is_triggered_only|immediate|trigger|icon|sound|mean_time_to_happen|fire_only_once|duration|hide_window|modifiers|time|to|ratio|icon_scale|localization|portraits|event_scope|potential|text|fail_text|success_text|allow|active|valid|which|days|event_chain|small_icon|events|ai_weight|ai_allow|weight|modifier|monthly|accumulative|decay|months|unique|key|flag|min|max|add|factor|tech|length|random_weight|value|scope|who|effect|amount|context|show_name|tooltip|description|factor)\\b"
                 },
                 {
                     "name": "variable.constant.paradox",
+                    "comment": "LHS script variables (@variable = something)",
                     "match": "@\\w+"
                 },
                 {
                     "name": "variable.boolean.paradox",
+                    "comment": "LHS boolean operators",
                     "match": "\\b(or|and|not|nor|nand|OR|AND|NOT|NOR|NAND)\\b"
                 },
                 {
                     "name": "variable.event.target.paradox",
+                    "comment": "LHS event_target:, three captures for keyword, colon and the target name",
                     "match": "(event_target)(\\:)([\\w]*)",
                     "captures": {
                         "1": {
@@ -125,43 +174,10 @@
                 }
             ]
         },
-        "constants": {
-            "patterns": [
-                {
-                    "name": "constant.language.paradox",
-                    "match": "(yes|no)+"
-                },
-                {
-                    "name": "constant.numeric.paradox",
-                    "match": "-?\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b"
-                },
-                {
-                    "name": "constant.rhs.paradox",
-                    "match": "(\\d|\\.)+"
-                },
-                {
-                    "name": "constant.rhs.string.paradox",
-                    "match": "(\\w|\\.)+"
-                }
-            ]
-        },
-        "comment": {
-            "patterns": [
-                {
-                    "name": "comment.line.number-sign.paradox",
-                    "begin": "#",
-                    "captures": {
-                        "1": {
-                            "name": "punctuation.definition.comment.paradox"
-                        }
-                    },
-                    "end": "$\\n?"
-                }
-            ]
-        },
         "block": {
             "patterns": [
                 {
+                    "comment": "Two brackets around the inside of the block, which just contains #code",
                     "begin": "(?<==)\\s*{",
                     "beginCaptures": {
                         "0": {
@@ -183,29 +199,14 @@
                 }
             ]
         },
-        "code": {
-            "patterns": [
-                {
-                    "include": "#block"
-                },
-                {
-                    "include": "#comment"
-                },
-                {
-                    "include": "#id"
-                },
-                {
-                    "include": "#variables"
-                }
-            ]
-        },
         "rhs" : {
             "patterns": [
-
                         {
+                            "comment": "RHS is either a constant value",
                             "include": "#constants"
                         },
                         {
+                            "comment": "Or a generic string",
                             "include": "#strings"
                         }
             ]
@@ -213,18 +214,19 @@
         "variables": {
             "patterns": [
                 {
-                    "comment": "LHS for value (not block)",
+                    "comment": "LHS for value, but not block (>keyword =< something)",
                     "begin": "[^\\S\\n]*(?<!@)(?=\\b\\w+\\b[^\\S\\n]*=[^\\S\\n]*[^{\\s])",
                     "end": "[^\\S\\n]*=",
                     "contentName": "variable.paradox",
                     "patterns": [
                         {
+                            "comment": "LHS is a keyword",
                             "include": "#keywords"
                         }
                     ]
                 },
                 {
-                    "comment": "RHS for value",
+                    "comment": "RHS for value (keyword = >something<)",
                     "begin": "[^\\S\\n]*(?<=[=])[^\\S\\n]*",
                     "end": "[\\s]+",
                     "contentName": "variable.language.rhs.paradox",
@@ -235,16 +237,19 @@
                     ]
                 },
                 {
+                    "comment": "LHS for block not value (>keyword =< { ... })",
                     "begin": "[^\\S\\n]*(?<!@)(?=\\b[\\w:.]+\\b[^\\S\\n]*=[^\\S\\n]*[{])",
                     "end": "[^\\S\\n]*=",
                     "contentName": "variable.scope.paradox",
                     "patterns": [
                         {
+                            "comment": "LHS for a block is just a keyword",
                             "include": "#keywords"
                         }
                     ]
                 },
                 {
+                    "comment": "Special rule for capturing script variables (@something = constant)",
                     "begin": "(?<=(@))(?=\\b\\w+\\b)",
                     "beginCaptures": {
                         "1": {
@@ -258,6 +263,25 @@
                             "include": "#constants"
                         }
                     ]
+                }
+            ]
+        },
+        "code": {
+            "patterns": [
+                {
+                    "comment": "Code is either a RHS block ({ #code })",
+                    "include": "#block"
+                },
+                {
+                    "comment": "Or a comment (# ...)",
+                    "include": "#comment"
+                },
+                {
+                    "include": "#id"
+                },
+                {
+                    "comment": "Or a single value either LHS or RHS (variable = variable, variable = block)",
+                    "include": "#variables"
                 }
             ]
         },
