@@ -16,6 +16,10 @@
         "Programming Languages"
     ],
     "contributes": {
+        "languages": [
+            { "id": "hoi4" },
+            { "id": "stellaris" }
+        ],
         "grammars": [
             {
                 "language": "stellaris",
@@ -28,6 +32,11 @@
                     "source.mod"
                 ],
                 "path": "./syntaxes/stellaris.tmLanguage.json"
+            },
+            {
+                "language": "hoi4",
+                "scopeName": "source.mod",
+                "path": "./syntaxes/paradox.tmLanguage.json"
             }
         ],
         "themes": [
