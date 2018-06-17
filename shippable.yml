@@ -12,4 +12,5 @@ build:
     - npm install -g vsce
     - echo $GIT_TAG_NAME
     - echo $BRANCH
+    - sed -i 's/0.0.1/'$GIT_TAG_NAME'/g' file.txt
     - if [ "$IS_RELEASE" == true ]; then vsce publish -p $VSCE_TOKEN $GIT_TAG_NAME; fi
