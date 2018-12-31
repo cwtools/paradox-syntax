@@ -18,7 +18,8 @@
     "contributes": {
         "languages": [
             { "id": "hoi4" },
-            { "id": "stellaris" }
+            { "id": "stellaris" },
+            { "id": "eu4"}
         ],
         "grammars": [
             {
@@ -35,6 +36,11 @@
             },
             {
                 "language": "hoi4",
+                "scopeName": "source.mod",
+                "path": "./syntaxes/paradox.tmLanguage.json"
+            },
+            {
+                "language": "eu4",
                 "scopeName": "source.mod",
                 "path": "./syntaxes/paradox.tmLanguage.json"
             }
