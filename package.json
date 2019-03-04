@@ -5,7 +5,7 @@
     "name": "paradox-syntax",
     "displayName": "Paradox Syntax Highlighting",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.1.7",
     "publisher": "tboby",
     "repository": "https://github.com/tboby/paradox-syntax",
     "preview": true,
@@ -19,6 +19,7 @@
         "languages": [
             { "id": "hoi4" },
             { "id": "stellaris" },
+            { "id": "ck2" },
             { "id": "eu4"}
         ],
         "grammars": [
@@ -40,9 +41,35 @@
                 "path": "./syntaxes/paradox.tmLanguage.json"
             },
             {
+                "scopeName": "source.hoi4",
+                "injectTo": [
+                    "source.mod"
+                ],
+                "path": "./syntaxes/hoi4.tmLanguage.json"
+            },
+            {
                 "language": "eu4",
                 "scopeName": "source.mod",
                 "path": "./syntaxes/paradox.tmLanguage.json"
+            },
+            {
+                "scopeName": "source.eu4",
+                "injectTo": [
+                    "source.mod"
+                ],
+                "path": "./syntaxes/eu4.tmLanguage.json"
+            },
+            {
+                "language": "ck2",
+                "scopeName": "source.mod",
+                "path": "./syntaxes/paradox.tmLanguage.json"
+            },
+            {
+                "scopeName": "source.ck2",
+                "injectTo": [
+                    "source.mod"
+                ],
+                "path": "./syntaxes/ck2.tmLanguage.json"
             }
         ],
         "themes": [
