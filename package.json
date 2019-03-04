@@ -1,6 +1,7 @@
 {
     "contributors": [
-        "Gratak", "Dayshine"
+        "Gratak",
+        "Dayshine"
     ],
     "name": "paradox-syntax",
     "displayName": "Paradox Syntax Highlighting",
@@ -17,10 +18,18 @@
     ],
     "contributes": {
         "languages": [
-            { "id": "hoi4" },
-            { "id": "stellaris" },
-            { "id": "ck2" },
-            { "id": "eu4"}
+            {
+                "id": "hoi4"
+            },
+            {
+                "id": "stellaris"
+            },
+            {
+                "id": "ck2"
+            },
+            {
+                "id": "eu4"
+            }
         ],
         "grammars": [
             {
