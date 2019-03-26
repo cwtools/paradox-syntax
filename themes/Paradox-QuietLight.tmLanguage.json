@@ -1,0 +1,391 @@
+// This is absolutely a work in progress. I can't properly see how everything is supposed to be tokenised until all effects/triggers/everything is defined properly.
+// Plus maybe some adjustments to the basic tokenisation are in order - but that's, again, only after everything is done at least for the first pass.
+// For now it's just a light theme that doesn't necessarily look like crap, just a bit of a colour mismatch everywhere. So that's a good thing, I hope.
+{
+	"name": "CKII - Quiet Light",
+	"author": "UristMcDorf",
+	"comment": "Based on Quiet Light; cut out the language-specific things apart from CWT",
+	"$schema": "vscode://schemas/color-theme",
+	"type": "light",
+	"colors": {
+		"activityBar.background": "#ededf5",
+		"activityBar.foreground": "#705697",
+		"activityBarBadge.background": "#705697",
+		"badge.background": "#705697aa",
+		"button.background": "#705697",
+		"dropdown.background": "#f5f5f5",
+		"editor.background": "#f5f5f5",
+		"editor.findMatchBackground": "#bf9cac",
+		"editor.findMatchHighlightBackground": "#edc9d8",
+		"editor.lineHighlightBackground": "#e4f6d4",
+		"editor.selectionBackground": "#c9d0d9",
+		"editorCursor.foreground": "#54494b",
+		"editorGroup.dropBackground": "#c9d0d988",
+		"editorLineNumber.activeForeground": "#9769dc",
+		"editorLineNumber.foreground": "#6d705b",
+		"editorWhitespace.foreground": "#aaaaaa",
+		"errorForeground": "#f1897f",
+		"focusBorder": "#a6b39b",
+		"inputOption.activeBorder": "#adafb7",
+		"inputValidation.errorBackground": "#ffeaea",
+		"inputValidation.errorBorder": "#f1897f",
+		"inputValidation.infoBackground": "#f2fcff",
+		"inputValidation.infoBorder": "#4ec1e5",
+		"inputValidation.warningBackground": "#fffee2",
+		"inputValidation.warningBorder": "#ffe055",
+		"list.activeSelectionBackground": "#c4d9b1",
+		"list.activeSelectionForeground": "#6c6c6c",
+		"list.focusBackground": "#cadeb9",
+		"list.highlightForeground": "#9769dc",
+		"list.hoverBackground": "#e0e0e0",
+		"list.inactiveSelectionBackground": "#d3dbcd",
+		"panel.background": "#f5f5f5",
+		"peekView.border": "#705697",
+		"peekViewEditor.background": "#f2f8fc",
+		"peekViewEditor.matchHighlightBackground": "#c2dfe3",
+		"peekViewResult.background": "#f2f8fc",
+		"peekViewResult.matchHighlightBackground": "#93c6d6",
+		"peekViewTitle.background": "#f2f8fc",
+		"pickerGroup.border": "#749351",
+		"pickerGroup.foreground": "#a6b39b",
+		"progressBar.background": "#705697",
+		"selection.background": "#c9d0d9",
+		"sideBar.background": "#f2f2f2",
+		"sideBarSectionHeader.background": "#ede8ef",
+		"statusBar.background": "#705697",
+		"statusBar.debuggingBackground": "#705697",
+		"statusBar.noFolderBackground": "#705697",
+		"titleBar.activeBackground": "#c4b7d7",
+		"walkThrough.embeddedEditorBackground": "#00000014"
+	},
+	"tokenColors": [
+		{
+			"scope": [
+				"meta.embedded",
+				"source.groovy.embedded"
+			],
+			"settings": {
+				"background": "#F5F5F5",
+				"foreground": "#333333"
+			}
+		},
+		{
+			"name": "Comments",
+			"scope": [
+				"comment",
+				"punctuation.definition.comment"
+			],
+			"settings": {
+				"fontStyle": "italic",
+				"foreground": "#AAAAAA"
+			}
+		},
+		{
+			"name": "Comments: Preprocessor",
+			"scope": "comment.block.preprocessor",
+			"settings": {
+				"fontStyle": "",
+				"foreground": "#AAAAAA"
+			}
+		},
+		{
+			"name": "Comments: Documentation",
+			"scope": [
+				"comment.documentation",
+				"comment.block.documentation",
+				"comment.block.documentation punctuation.definition.comment "
+			],
+			"settings": {
+				"foreground": "#448C27"
+			}
+		},
+		{
+			"name": "Invalid - Deprecated",
+			"scope": "invalid.deprecated",
+			"settings": {
+				"background": "#96000014"
+			}
+		},
+		{
+			"name": "Invalid - Illegal",
+			"scope": "invalid.illegal",
+			"settings": {
+				"background": "#96000014",
+				"foreground": "#660000"
+			}
+		},
+		{
+			"name": "Operators",
+			"scope": "keyword.operator",
+			"settings": {
+				"foreground": "#777777"
+			}
+		},
+		{
+			"name": "Keywords",
+			"scope": [
+				"keyword",
+				"storage"
+			],
+			"settings": {
+				"foreground": "#4B69C6"
+			}
+		},
+		{
+			"name": "Types",
+			"scope": [
+				"storage.type",
+				"support.type"
+			],
+			"settings": {
+				"foreground": "#7A3E9D"
+			}
+		},
+		{
+			"name": "Language Constants",
+			"scope": [
+				"constant.language",
+				"support.constant",
+				"variable.language"
+			],
+			"settings": {
+				"foreground": "#9C5D27"
+			}
+		},
+		{
+			"name": "Variables",
+			"scope": [
+				"variable",
+				"support.variable"
+			],
+			"settings": {
+				"foreground": "#7A3E9D"
+			}
+		},
+		{
+			"name": "Functions",
+			"scope": [
+				"entity.name.function",
+				"support.function"
+			],
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#AA3731"
+			}
+		},
+		{
+			"name": "Classes",
+			"scope": [
+				"entity.name.type",
+				"entity.other.inherited-class",
+				"support.class"
+			],
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#7A3E9D"
+			}
+		},
+		{
+			"name": "Exceptions",
+			"scope": "entity.name.exception",
+			"settings": {
+				"foreground": "#660000"
+			}
+		},
+		{
+			"name": "Sections",
+			"scope": "entity.name.section",
+			"settings": {
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "Numbers, Characters",
+			"scope": [
+				"constant.numeric",
+				"constant.character",
+				"constant"
+			],
+			"settings": {
+				"foreground": "#9C5D27"
+			}
+		},
+		{
+			"name": "Strings",
+			"scope": "string",
+			"settings": {
+				"foreground": "#448C27"
+			}
+		},
+		{
+			"name": "Strings: Escape Sequences",
+			"scope": "constant.character.escape",
+			"settings": {
+				"foreground": "#777777"
+			}
+		},
+		{
+			"name": "Strings: Regular Expressions",
+			"scope": "string.regexp",
+			"settings": {
+				"foreground": "#4B69C6"
+			}
+		},
+		{
+			"name": "Strings: Symbols",
+			"scope": "constant.other.symbol",
+			"settings": {
+				"foreground": "#9C5D27"
+			}
+		},
+		{
+			"name": "Punctuation",
+			"scope": "punctuation",
+			"settings": {
+				"foreground": "#777777"
+			}
+		},
+		{
+			"name": "Embedded Source",
+			"scope": [
+				"string source",
+				"text source"
+			],
+			"settings": {
+				"background": "#EAEBE6"
+			}
+		},
+		{
+			"scope": "token.info-token",
+			"settings": {
+				"foreground": "#316bcd"
+			}
+		},
+		{
+			"scope": "token.warn-token",
+			"settings": {
+				"foreground": "#cd9731"
+			}
+		},
+		{
+			"scope": "token.error-token",
+			"settings": {
+				"foreground": "#cd3131"
+			}
+		},
+		{
+			"scope": "token.debug-token",
+			"settings": {
+				"foreground": "#800080"
+			}
+		},
+		{
+			"scope": "variable.language.multi_scopes.paradox",
+			"settings": {
+				"foreground": "#4B69C6" // Keywords? Some fields in classes use this, some use variable.language.definition_tokens.paradox; weird
+			}
+		},
+		{
+			"scope": "constant.prefdef.paradox",
+			"settings": {
+				"foreground": "#9C5D27"
+			}
+		},
+		{
+			"scope": "variable.language.condition_scopes.paradox",
+			"settings": {
+				"foreground": "#67724a"
+			}
+		},
+		{
+			"scope": "variable.language.command_scopes.paradox",
+			"settings": {
+				"foreground": "#8A2BE2"
+			}
+		},
+		{
+			"scope": "variable.language.other.paradox",
+			"settings": {
+				"foreground": "#00BFFF"
+			}
+		},
+		{
+			"scope": "variable.language.conditions.paradox",
+			"settings": {
+				"foreground": "#67724a"
+			}
+		},
+		{
+			"scope": "variable.language.effects.paradox",
+			"settings": {
+				"foreground": "#b91d12dc" // Made it slightly darker to fit with the rest of the theme
+			}
+		},
+		{
+			"scope": "constant.numeric.paradox",
+			"settings": {
+				"foreground": "#7A3E9D" // Variable
+			}
+		},
+		{
+			"scope": "variable.boolean.paradox",
+			"settings": {
+				"foreground": "#4B69C6" // Keyword
+			}
+		},
+		{
+			"scope": [
+				"variable.lhs.paradox",
+				"rest.normal.paradox"
+			],
+			"settings": {
+				"foreground": "#AA3731" // Function
+			}
+		},
+		{
+			"scope": "variable.lhs.bracket.paradox",
+			"settings": {
+				"foreground": "#7A3E9D" // Class? Since it's used for type definitions
+			}
+		},
+		{
+			"scope": [
+				"constant.rhs.paradox",
+				"constant.language.paradox"
+			],
+			"settings": {
+				"foreground": "#7A3E9D" // Variable
+			}
+		},
+		{
+			"scope": "variable.language.definition_tokens.paradox",
+			"settings": {
+				"foreground": "#4B69C6" // Keywords? Some fields in classes use this, some use variable.language.multi_scopes.paradox; weird
+			}
+		},
+		{
+			"scope": "variable.language.modifiers.paradox",
+			"settings": {
+				"foreground": "#008000"
+			}
+		},
+		{
+			"scope": "source.mod",
+			"settings": {
+				"foreground": "#777777" // Punctuation since that covers =s
+			}
+		},
+		{
+			"scope": "string.quoted.double.paradox",
+			"settings": {
+				"foreground": "#448C27" // String
+			}
+		},
+		{
+			"scope": "comment.line.number-sign.paradox",
+			"settings": {
+				"foreground": "#a5abaf"
+			}
+		}
+	]
+}
