@@ -5,7 +5,7 @@ node_js:
 
 env:
   global:
-    - secure: 2IpXD1koClPL2LqZyP14vgdV14o7aPycAVSFAaMnkW6KXRvdlnMTScWplz0kpKSvjojPSCEJzJUlhc0kCJLfcxIcFokIs1lkYKjpvjGnwnTRwpI/Glbd4vPsYQbzQS2mtVHudgcXLrhl+qrztjgI62tqg/BKPsdqoy3Vbvx0XmiaMY2fndwomf5S0ltd87BGfoaj3gjfoYOuiPcLMSMGORXYp6l0zE4ixEpwEuoeWqljKxipDPtqeIo02SkNQWC381saEQOyo9vtDNc5YyIbBjmduo9L8C9A0xdLhwq/swEfv1WyJN9ZdDjRdrZVwsvTdnWCFzKmFdtyAfGdtwWyfA==
+    - secure: OuFlQp1fcJ6k4URhVAgSGjNMaHFbosBwE3snz54b3O7+Bm/ZwFu58y8ZH1pdsTXOhUOkFtSr497LXaPFAfOdP+PY0c3YY+/py2o95DHuNZj42N3suBopbufu7Cjn61o20YtjstplXr4fu35XQmxq+7z1lSrjQMG0JAjryrt+WydptgchkV3q/L5M/ovFiTdvczVYXtUoL7+91RQ/IiGIN+QagjdltKaaWMhIAizhNPaJMaiuopvpiatKelo+BdQG5OFx3WsKttIOeJGufdH4g84nOT6VsOmM8/UngKFDi24s5++Op8UZePj+x0X7CStQC/4NeYMpS35nca5sIncblQ==
 
 build:
   ci:
