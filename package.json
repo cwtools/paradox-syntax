@@ -29,6 +29,9 @@
             },
             {
                 "id": "eu4"
+            },
+            {
+                "id": "imperator"
             }
         ],
         "grammars": [
@@ -79,6 +82,11 @@
                     "source.mod"
                 ],
                 "path": "./syntaxes/ck2.tmLanguage.json"
+            },
+            {
+                "language": "imperator",
+                "scopeName": "source.mod",
+                "path": "./syntaxes/paradox.tmLanguage.json"
             }
         ],
         "themes": [
@@ -86,6 +94,11 @@
                 "label": "Stellaris Theme",
                 "uiTheme": "vs-dark",
                 "path": "./themes/Paradox-Dimmed.tmLanguage.json"
+            },
+            {
+                "label": "Quiet Light Paradox Theme",
+                "uiTheme": "vs",
+                "path": "./themes/Paradox-QuietLight.tmLanguage.json"
             }
         ]
     }
