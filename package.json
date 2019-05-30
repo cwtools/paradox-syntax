@@ -32,6 +32,9 @@
             },
             {
                 "id": "imperator"
+            },
+            {
+                "id": "vic2"
             }
         ],
         "grammars": [
@@ -85,6 +88,11 @@
             },
             {
                 "language": "imperator",
+                "scopeName": "source.mod",
+                "path": "./syntaxes/paradox.tmLanguage.json"
+            },
+            {
+                "language": "vic2",
                 "scopeName": "source.mod",
                 "path": "./syntaxes/paradox.tmLanguage.json"
             }
