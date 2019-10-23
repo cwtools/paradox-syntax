@@ -35,6 +35,9 @@
             },
             {
                 "id": "vic2"
+            },
+            {
+                "id": "paradox"
             }
         ],
         "grammars": [
@@ -93,6 +96,11 @@
             },
             {
                 "language": "vic2",
+                "scopeName": "source.mod",
+                "path": "./syntaxes/paradox.tmLanguage.json"
+            },
+            {
+                "language": "paradox",
                 "scopeName": "source.mod",
                 "path": "./syntaxes/paradox.tmLanguage.json"
             }
