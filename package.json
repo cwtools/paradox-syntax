@@ -40,6 +40,9 @@
                 "id": "ck3"
             },
             {
+                "id": "vic3"
+            },
+            {
                 "id": "paradox"
             }
         ],
@@ -104,6 +107,11 @@
             },
             {
                 "language": "ck3",
+                "scopeName": "source.mod",
+                "path": "./syntaxes/paradox.tmLanguage.json"
+            },
+            {
+                "language": "vic3",
                 "scopeName": "source.mod",
                 "path": "./syntaxes/paradox.tmLanguage.json"
             },
