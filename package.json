@@ -1,15 +1,21 @@
 {
+    "name": "paradox-syntax",
+    "displayName": "Paradox Syntax Highlighting",
+    "private": true,
+    "description": "Basic syntax highlighting files for paradox games using textmate",
+    "author": "Dayshine",
     "contributors": [
         "Gratak",
         "Dayshine"
     ],
-    "name": "paradox-syntax",
-    "displayName": "Paradox Syntax Highlighting",
-    "description": "",
+    "license": "MIT",
     "version": "0.1.17",
-    "publisher": "tboby",
-    "repository": "https://github.com/tboby/paradox-syntax",
     "preview": true,
+    "publisher": "tboby",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cwtools/paradox-syntax"
+    },
     "engines": {
         "vscode": "^1.23.0"
     },
