@@ -63,7 +63,7 @@
                 {
                     "name": "constant.numeric.paradox",
                     "comment": "A RHS number, either integer or float, positive or negative",
-                    "match": "(?<![\\w\\.\\+\\-])[\\+\\-]?([0-9]+\\.?[0-9]*|(\\.[0-9]+))(?![\\w\\.\\+\\-])"
+                    "match": "(?<![\\w\\.\\+\\-])[\\+\\-]?(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))(?![\\w\\.\\+\\-])"
                 },
                 {
                     "name": "constant.rhs.paradox",
