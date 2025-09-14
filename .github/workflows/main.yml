@@ -14,5 +14,5 @@ jobs:
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v2
         with:
-          vsce-token: ${{ secrets.VSCE_TOKEN }}
+          pat: ${{ secrets.VSCE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
