@@ -3,11 +3,8 @@
 This repository contains textmate grammars for Paradox Interactive games. Currently:
 
 * A generic paradox grammar
-* A Stellaris grammar
+* Outdated extensions for Stellaris, EU4, HOI4 and CK2 which add some extra keywords
 
-It will also contain some themes designed to work with these grammars.
+It also contains some themes designed to work with these grammars.
 
-## Todo
-
-* Value blocks (e.g. `prerequisites = { "tech_5" })
-* Numerical operators (`<,>`)
+These grammars only really work if you use the themes included: Paradox-Dimmed and Paradox-QuietLight. The reason they don't really work is that the paradox scripting language doesn't line up with the expected textmate keywords.
