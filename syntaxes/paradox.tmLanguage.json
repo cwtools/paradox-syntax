@@ -58,7 +58,7 @@
                 },
                 {
                     "name": "constant.language.paradox",
-                    "match": "(yes|no)+"
+                    "match": "\\b(yes|no)\\b"
                 },
                 {
                     "name": "constant.numeric.paradox",
