@@ -125,6 +125,11 @@
                 "path": "./syntaxes/paradox.tmLanguage.json"
             },
             {
+                "language": "eu5",
+                "scopeName": "source.mod",
+                "path": "./syntaxes/paradox.tmLanguage.json"
+            },
+            {
                 "language": "paradox",
                 "scopeName": "source.mod",
                 "path": "./syntaxes/paradox.tmLanguage.json"
